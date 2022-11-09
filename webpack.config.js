@@ -3,8 +3,6 @@ var path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
-let output = '/home/pi/server/portfolio/';
-
 module.exports = env => 
 {
   let outputPath = path.resolve(__dirname, (env.output !== undefined ? env.output : "build"));
