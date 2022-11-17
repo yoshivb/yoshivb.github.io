@@ -72,9 +72,6 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# build output
-build/
-
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and *not* Next.js
