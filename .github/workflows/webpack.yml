@@ -13,13 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build and Publish using Node
+    - name: Setup Node
       uses: actions/setup-node@v3
       with:
         node-version: '16.x'
 
     - name: Build
-      run: |
+      run:
         npm install
         npm run build
         
@@ -28,5 +28,14 @@ jobs:
       with:
         path: 'build/'
         
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    
+    permissions:
+      pages: write
+      id-token: write
+    
+    steps:
     - name: Deploy GitHub Pages site
       uses: actions/deploy-pages@v1.2.2
